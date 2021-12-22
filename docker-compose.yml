@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  fluf:
+    container_name: app
+    restart: always
+    build:
+      dockerfile: ./Dockerfile
+      context: ./
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
